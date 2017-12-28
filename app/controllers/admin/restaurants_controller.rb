@@ -21,14 +21,32 @@ class Admin::RestaurantsController < ApplicationController
     end
   end
 
-   def show
-    @restaurant = Restaurant.find(params[:id])
+  before_action :set_restaurant, only: [:show, :edit, :update]
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @restaurant.update(restaurant_params)
+      flash[:notice] = "restaurant was successfully created"
+      redirect_to admin_restaurants_path
+    else
+      flash.now[:alert] = "restaurant was failed to create"
+      render :edit
+    end
   end
 
   private
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :opening_hours, :tel, :address, :description)
+  end
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
   end
 
 end
