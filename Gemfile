@@ -63,6 +63,9 @@ group :production do
 end
 
 group :development, :test do
+  gem 'byebug'
+  gem 'capybara',"~>2.13"
+  gem 'selenium-webdriver'
   gem 'sqlite3'
 end
 
