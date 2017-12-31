@@ -55,4 +55,6 @@ class Admin::RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+
+
 end
