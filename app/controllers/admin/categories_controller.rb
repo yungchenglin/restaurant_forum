@@ -31,11 +31,18 @@ class Admin::CategoriesController < ApplicationController
     if @category.update(category_params)
      redirect_to admin_categories_path
      flash[:notice] = "category was successfully updated"
-     
+
     else
       @categories = Category.all
       render :index
      end
+    end
+
+    def destroy
+      @category = Category.find(params[:id])
+      @category.destroy
+      flash[:alert] = "category was successfully deleted"
+      redirect_to admin_categories_path
     end
  
 private
