@@ -1,8 +1,9 @@
 class RestaurantsController < ApplicationController
-  
- 
 
-  def  index
+  def index
+    @restaurants = Restaurant.page(params[:page]).per(9)
   end
-
 end
+
+
+
