@@ -9,7 +9,7 @@ namespace :dev do
         address: FFaker::Address.street_address,
         description: FFaker::Lorem.paragraph,
         category: Category.all.sample,
-        image: File.open(Rails.root.join("public/seed_img/#{rand(1-20)}.jpg")) 
+        image: File.open(Rails.root.join("public/seed_img/#{rand(0-19)}.jpg")) 
     )
     end
 
