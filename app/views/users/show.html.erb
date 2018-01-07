@@ -31,7 +31,11 @@
             <%= link_to restaurant_path(restaurant) do %>
             <div class ="my-restaurant" >
             <div>
-              <%= image_tag restaurant.image, class: "img-responsive img-rounded" %>
+              <% for img_id in 0..19 %>
+               <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
+               <%= image_tag('/seed_img/'+img_id.to_s+'.jpg',class: "img-responsive img-rounded") %>
+              <% end %> 
+              <% end %>
             </div>
            <h4><%= restaurant.name %></h4><br>
          </div>
