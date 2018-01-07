@@ -20,8 +20,17 @@
           <% end %> 
         </div>
         <div class="clearfix"></div>
-        </div>
-       <br>
+        </div><br>
+
+        <div>
+          <div>
+           <%= @commented_restaurants.each do |restaurant|%>
+           <h4><%= restaurant.name %></h4><br>
+           <% end %>
+          </div>
+         </div>
+          
+
     </div>
   </div>
 </div>
