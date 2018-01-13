@@ -8,10 +8,10 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :comments, dependent: :restrict_with_error
-  has_many :restaurants, through: :comments
+  has_many :commentd_restaurants, through: :comments, source: :restaurant
 
   has_many :favorites, dependent: :destroy
-  has_many :favorited_restaurant, through: :favorites, source: :restaurant
+  has_many :favorited_restaurants, through: :favorites, source: :restaurant
   
   def admin?
     self.role == "admin"
