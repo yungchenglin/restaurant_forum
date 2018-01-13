@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Category.destroy_all
+Category.delete_all
 
 category_list =[
   { name: "中式料理" },
@@ -24,5 +24,3 @@ category_list.each do |category|
 end
 puts "Category created!"
 
-User.create(email: "root@example.com", password: "12345678", role: "admin", name: "Dojo AC")
-puts "Default admin created!"
