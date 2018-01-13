@@ -13,6 +13,11 @@ Rails.application.routes.draw do
       get :dashboard
     end
 
+    member do
+      post :favorite
+      post :unfavorite
+    end
+
   end
 
   resources :users, only: [:show, :edit, :update]
