@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Category.destroy_all
+Category.delete_all
 
 category_list =[
   { name: "中式料理" },
@@ -20,7 +20,7 @@ category_list =[
 ]
 
 category_list.each do |category|
-  Category.create( name: category[:name] )
+  Category.find_or_create_by( name:'' )
 end
 puts "Category created!"
 
