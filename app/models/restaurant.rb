@@ -4,6 +4,6 @@ class Restaurant < ApplicationRecord
 
   belongs_to :category, optional: true
   
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :restrict_with_error
   
 end
