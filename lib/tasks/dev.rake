@@ -52,5 +52,14 @@ namespace :dev do
 
   end
 
+  task fake_all: :environment do
+    Rake::Task["db:migrate"].execute
+    Rake::Task["db:seed"].execute
+    Rake::Task["dev:fake_restaurant"].execute
+    Rake::Task["dev:fake_user"].execute
+    Rake::Task["dev:fake_comment"].execute
+  end
+
+
 
 end
