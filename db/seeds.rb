@@ -20,7 +20,7 @@ category_list =[
 ]
 
 category_list.each do |category|
-  Category.find_or_create_by( name:'' )
+  Category.create( name: category[:name] )
 end
 puts "Category created!"
 
