@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Category.delete_all
+Category.destroy_all
 
 category_list =[
   { name: "中式料理" },
